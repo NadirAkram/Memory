@@ -1,98 +1,94 @@
-
-<!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<!DOCTYPE html><html lang="ur" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>میری محبت</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ہماری محبت کا لمحہ</title>
     <link href="https://fonts.googleapis.com/earlyaccess/notonastaliqurdu.css" rel="stylesheet">
     <style>
         body {
-            font-family: 'Noto Nastaliq Urdu Draft', serif;
-            background: linear-gradient(to right, #f8e1e7, #d3d3d3);
-            margin: 0;
-            padding: 0;
+            font-family: 'Noto Nastaliq Urdu', serif;
+            background: linear-gradient(to bottom right, #f8e1ec, #e0e0e0);
+            color: #333;
             text-align: center;
-            direction: rtl;
-        }
-        header {
-            background-color: #f8b3c6;
-            color: white;
             padding: 20px;
-            font-size: 2em;
         }
-        .section {
-            margin: 30px;
-            padding: 20px;
-            background-color: #ffffffb3;
-            border-radius: 15px;
-            box-shadow: 0 0 10px #d3d3d3;
-        }
-        .images {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-        .images img {
-            border-radius: 10px;
-            max-width: 300px;
-            height: auto;
+        h1, h2, h3 {
+            color: #d63384;
         }
         .countdown {
-            font-size: 1.5em;
-            margin-top: 10px;
+            font-size: 2em;
+            margin: 20px 0;
+        }
+        .memory, .reason, .poetry {
+            margin: 30px 0;
+            background: #ffffffcc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .gallery img {
+            max-width: 90%;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+            border: 2px solid #d63384;
         }
     </style>
 </head>
 <body>
-    <header>میری محبت کے لیے ایک خاص تحفہ</header>
+    <h1>میری محبت، تمہارے نام</h1>
+    <div class="countdown" id="countdown"></div><div class="memory">
+    <h2>یادگار لمحہ</h2>
+    <p>وہ دن جب تم نے سر درد کا بہانہ بنا کر اسکول سے آدھی چھٹی لی اور ہم ریلوے اسٹیشن گئے۔</p>
+</div>
 
-    <div class="section countdown" id="countdown">
-        اگلی ملاقات تک وقت: ...
-    </div>
+<div class="gallery">
+    <img src="image1.jpg" alt="ہاتھ پکڑے ہوئے">
+    <img src="image2.jpg" alt="کھانا ریلوے پر">
+    <img src="image3.jpg" alt="ایک ساتھ تصویر">
+    <img src="image4.jpg" alt="ریلوے اسٹیشن پر">
+</div>
 
-    <div class="section">
-        <h2>ہماری یادگار لمحہ</h2>
-        <p>وہ دن جب تم نے بہانہ کیا کہ سر درد ہے، اسکول سے چھٹی لی اور ہم ریلوے اسٹیشن گئے۔</p>
-        <div class="images">
-            <img src="image1.jpg" alt="یادگار لمحہ 1">
-            <img src="image2.jpg" alt="یادگار لمحہ 2">
-        </div>
-    </div>
+<div class="reason">
+    <h2>میں تم سے کیوں محبت کرتا ہوں</h2>
+    <p>جب میرے پاس کچھ نہ تھا تو تم نے مجھ سے محبت کی۔ اب جب میرے پاس سب کچھ ہے، تو تمہیں محبت کیے بغیر رہا نہیں جا سکتا۔</p>
+</div>
 
-    <div class="section">
-        <h2>میں تم سے کیوں محبت کرتا ہوں؟</h2>
-        <p>کیونکہ تم نے مجھ سے اس وقت محبت کی جب میرے پاس کچھ نہیں تھا، اب تم ہر محبت کی حقدار ہو جب میرے پاس سب کچھ ہے۔</p>
-    </div>
+<div class="poetry">
+    <h2>میرا شعر تمہارے لیے</h2>
+    <p>
+        پھولوں کی تم کلی ہو، گلشن کی شان ہو تم<br>
+        میرے جگر کا سوز ہو اور سازِ جان ہو تم<br>
+        تم سے ہی میں ہوں زندہ، تم پر ہی میں فدا ہوں<br>
+        تم آفریں ہو میری، میرا جہان ہو تم
+    </p>
+</div>
 
-    <div class="section">
-        <h2>میری شاعری تمہارے لیے</h2>
-        <p>
-            پھولوں کی تم کلی ہو، گلشن کی شان ہو تم<br>
-            میرے جگر کا سوز ہو اور سازِ جان ہو تم<br>
-            تم سے ہی میں ہوں زندہ، تم پر ہی میں فدا ہوں<br>
-            تم آفریں ہو میری، میرا جہان ہو تم
-        </p>
-    </div>
+<script>
+    // Set the date we're counting down to (14 days from now)
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 14);
 
-    <script>
-        const targetDate = new Date();
-        targetDate.setDate(targetDate.getDate() + 14);
+    const countdown = document.getElementById("countdown");
 
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
+    const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("countdown").innerHTML = `اگلی ملاقات تک وقت: ${days} دن، ${hours} گھنٹے، ${minutes} منٹ، ${seconds} سیکنڈ`;
+        countdown.innerHTML = `ہم ${days} دن، ${hours} گھنٹے، ${minutes} منٹ، اور ${seconds} سیکنڈ میں دوبارہ ملیں گے`;
+
+        if (distance < 0) {
+            countdown.innerHTML = "ہم دوبارہ مل چکے ہیں!";
         }
+    };
 
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-    </script>
+    setInterval(updateCountdown, 1000);
+</script>
+
 </body>
 </html>
