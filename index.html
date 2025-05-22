@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>میری محبت</title>
+    <link href="https://fonts.googleapis.com/earlyaccess/notonastaliqurdu.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Nastaliq Urdu Draft', serif;
+            background: linear-gradient(to right, #f8e1e7, #d3d3d3);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            direction: rtl;
+        }
+        header {
+            background-color: #f8b3c6;
+            color: white;
+            padding: 20px;
+            font-size: 2em;
+        }
+        .section {
+            margin: 30px;
+            padding: 20px;
+            background-color: #ffffffb3;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #d3d3d3;
+        }
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .images img {
+            border-radius: 10px;
+            max-width: 300px;
+            height: auto;
+        }
+        .countdown {
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>میری محبت کے لیے ایک خاص تحفہ</header>
+
+    <div class="section countdown" id="countdown">
+        اگلی ملاقات تک وقت: ...
+    </div>
+
+    <div class="section">
+        <h2>ہماری یادگار لمحہ</h2>
+        <p>وہ دن جب تم نے بہانہ کیا کہ سر درد ہے، اسکول سے چھٹی لی اور ہم ریلوے اسٹیشن گئے۔</p>
+        <div class="images">
+            <img src="image1.jpg" alt="یادگار لمحہ 1">
+            <img src="image2.jpg" alt="یادگار لمحہ 2">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>میں تم سے کیوں محبت کرتا ہوں؟</h2>
+        <p>کیونکہ تم نے مجھ سے اس وقت محبت کی جب میرے پاس کچھ نہیں تھا، اب تم ہر محبت کی حقدار ہو جب میرے پاس سب کچھ ہے۔</p>
+    </div>
+
+    <div class="section">
+        <h2>میری شاعری تمہارے لیے</h2>
+        <p>
+            پھولوں کی تم کلی ہو، گلشن کی شان ہو تم<br>
+            میرے جگر کا سوز ہو اور سازِ جان ہو تم<br>
+            تم سے ہی میں ہوں زندہ، تم پر ہی میں فدا ہوں<br>
+            تم آفریں ہو میری، میرا جہان ہو تم
+        </p>
+    </div>
+
+    <script>
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + 14);
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `اگلی ملاقات تک وقت: ${days} دن، ${hours} گھنٹے، ${minutes} منٹ، ${seconds} سیکنڈ`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
